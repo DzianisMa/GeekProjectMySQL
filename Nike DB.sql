@@ -3,7 +3,7 @@ create database nike;
 use nike;
 
 -- 1 
-drop table if exists users; -- пользователи
+drop table if exists users; -- Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ð¸
 create table users(
 	id SERIAL primary key,
 	firstname VARCHAR(50),
@@ -22,7 +22,7 @@ create table users(
 
 
 -- 2
-drop table if exists brendName; -- бренд
+drop table if exists brendName; -- Ð±Ñ€ÐµÐ½Ð´
 create table brendName(
 	id SERIAL primary key,
 	brendName VARCHAR(50)
@@ -30,7 +30,7 @@ create table brendName(
 
 
 -- 3
-drop table if exists sportType; -- вид спорта
+drop table if exists sportType; -- Ð²Ð¸Ð´ ÑÐ¿Ð¾Ñ€Ñ‚Ð°
 create table sportType(
 	id SERIAL primary key,
 	sportType VARCHAR(50)
@@ -38,7 +38,7 @@ create table sportType(
 
 
 -- 4
-drop table if exists catalogs; -- вид одежды 
+drop table if exists catalogs; -- Ð²Ð¸Ð´ Ð¾Ð´ÐµÐ¶Ð´Ñ‹ 
 create table catalogs(
   	id SERIAL PRIMARY KEY,
   	name VARCHAR(255),
@@ -47,7 +47,7 @@ create table catalogs(
 
 
 -- 5 
-drop table if exists color; -- цвет
+drop table if exists color; -- Ñ†Ð²ÐµÑ‚
 create table color(
 	id SERIAL primary key,
 	color VARCHAR(50)
@@ -55,7 +55,7 @@ create table color(
 
 
 -- 6
-drop table if exists productSize; -- размер одежды
+drop table if exists productSize; -- Ñ€Ð°Ð·Ð¼ÐµÑ€ Ð¾Ð´ÐµÐ¶Ð´Ñ‹
 create table productSize(
 	id SERIAL primary key,
 	productSize CHAR(1)
@@ -63,7 +63,7 @@ create table productSize(
 
 
 -- 7
-drop table if exists collection; -- коллекция
+drop table if exists collection; -- ÐºÐ¾Ð»Ð»ÐµÐºÑ†Ð¸Ñ
 create table collection(
 	id SERIAL primary key,
 	collection VARCHAR(50)
@@ -71,7 +71,7 @@ create table collection(
 
 
 -- 8
-drop table if exists products; -- продукт
+drop table if exists products; -- Ð¿Ñ€Ð¾Ð´ÑƒÐºÑ‚
 create table products (
   	id SERIAL PRIMARY KEY,
   	catalog_id BIGINT UNSIGNED,
@@ -95,7 +95,7 @@ create table products (
 
 
 -- 9
-drop table if exists orders; -- заказ
+drop table if exists orders; -- Ð·Ð°ÐºÐ°Ð·
 create table orders (
   	id SERIAL PRIMARY KEY,
   	users_id BIGINT UNSIGNED,
@@ -106,7 +106,7 @@ create table orders (
 
 
 -- 10
-drop table if exists orders_products; -- содержание заказа
+drop table if exists orders_products; -- ÑÐ¾Ð´ÐµÑ€Ð¶Ð°Ð½Ð¸Ðµ Ð·Ð°ÐºÐ°Ð·Ð°
 create table orders_products (
  	id SERIAL PRIMARY KEY,
  	orders_id BIGINT UNSIGNED,
@@ -120,7 +120,7 @@ create table orders_products (
 
 
 -- 11 
-drop table if exists discounts; -- скидки
+drop table if exists discounts; -- ÑÐºÐ¸Ð´ÐºÐ¸
 create table discounts (
   	id SERIAL PRIMARY KEY,
   	user_id INT UNSIGNED,
@@ -137,7 +137,7 @@ create table discounts (
 
 
 -- 12
-drop table if exists storehouses; -- склад
+drop table if exists storehouses; -- ÑÐºÐ»Ð°Ð´
 create table storehouses (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
@@ -159,10 +159,10 @@ create table storehouses_products (
   foreign key (product_id) references products(id)
 );
 
--- ������� 4
+-- Çàäàíèå 4
 
 
--- ������� 5
+-- Çàäàíèå 5
 
 INSERT INTO `users` VALUES ('1','Lucinda','Bins','f','1991-04-15 21:23:11','New Pierce','luettgen.adrian@example.org','319','S','1984-08-01 15:34:13','1972-07-09 00:33:44'),
 ('2','Erica','Daniel','m','2012-02-11 16:33:49','Jaidenbury','elisabeth13@example.com','0','S','1994-04-16 22:51:43','1972-04-13 08:24:47'),
@@ -275,35 +275,35 @@ INSERT INTO `brendName` (`id`, `brendName`) VALUES ('5', 'ACG');
 INSERT INTO `brendName` (`id`, `brendName`) VALUES ('6', 'Nike Pro');
 
 
-INSERT INTO `sportType` (`id`, `sportType`) VALUES ('1', 'Бег');
-INSERT INTO `sportType` (`id`, `sportType`) VALUES ('2', 'Футбол');
-INSERT INTO `sportType` (`id`, `sportType`) VALUES ('3', 'Баскетбол');
-INSERT INTO `sportType` (`id`, `sportType`) VALUES ('4', 'Фитнес');
-INSERT INTO `sportType` (`id`, `sportType`) VALUES ('5', 'Кросс-тренинг');
-INSERT INTO `sportType` (`id`, `sportType`) VALUES ('6', 'Йога');
-INSERT INTO `sportType` (`id`, `sportType`) VALUES ('7', 'Скейтбординг');
-INSERT INTO `sportType` (`id`, `sportType`) VALUES ('8', 'Теннис');
-INSERT INTO `sportType` (`id`, `sportType`) VALUES ('9', 'Гольф');
-INSERT INTO `sportType` (`id`, `sportType`) VALUES ('10', 'Американский футбол');
+INSERT INTO `sportType` (`id`, `sportType`) VALUES ('1', 'Ð‘ÐµÐ³');
+INSERT INTO `sportType` (`id`, `sportType`) VALUES ('2', 'Ð¤ÑƒÑ‚Ð±Ð¾Ð»');
+INSERT INTO `sportType` (`id`, `sportType`) VALUES ('3', 'Ð‘Ð°ÑÐºÐµÑ‚Ð±Ð¾Ð»');
+INSERT INTO `sportType` (`id`, `sportType`) VALUES ('4', 'Ð¤Ð¸Ñ‚Ð½ÐµÑ');
+INSERT INTO `sportType` (`id`, `sportType`) VALUES ('5', 'ÐšÑ€Ð¾ÑÑ-Ñ‚Ñ€ÐµÐ½Ð¸Ð½Ð³');
+INSERT INTO `sportType` (`id`, `sportType`) VALUES ('6', 'Ð™Ð¾Ð³Ð°');
+INSERT INTO `sportType` (`id`, `sportType`) VALUES ('7', 'Ð¡ÐºÐµÐ¹Ñ‚Ð±Ð¾Ñ€Ð´Ð¸Ð½Ð³');
+INSERT INTO `sportType` (`id`, `sportType`) VALUES ('8', 'Ð¢ÐµÐ½Ð½Ð¸Ñ');
+INSERT INTO `sportType` (`id`, `sportType`) VALUES ('9', 'Ð“Ð¾Ð»ÑŒÑ„');
+INSERT INTO `sportType` (`id`, `sportType`) VALUES ('10', 'ÐÐ¼ÐµÑ€Ð¸ÐºÐ°Ð½ÑÐºÐ¸Ð¹ Ñ„ÑƒÑ‚Ð±Ð¾Ð»');
 INSERT INTO `sportType` (`id`, `sportType`) VALUES ('11', 'NBA');
-INSERT INTO `sportType` (`id`, `sportType`) VALUES ('12', 'Танцы');
+INSERT INTO `sportType` (`id`, `sportType`) VALUES ('12', 'Ð¢Ð°Ð½Ñ†Ñ‹');
 
 
-INSERT INTO `catalogs` (`id`, `name`) VALUES ('1', 'Спортивные костюмы');
-INSERT INTO `catalogs` (`id`, `name`) VALUES ('2', 'Юбки и платья');
-INSERT INTO `catalogs` (`id`, `name`) VALUES ('3', 'Шорты');
-INSERT INTO `catalogs` (`id`, `name`) VALUES ('4', 'Брюки и леггинсы');
-INSERT INTO `catalogs` (`id`, `name`) VALUES ('5', 'Куртки и жилеты');
-INSERT INTO `catalogs` (`id`, `name`) VALUES ('6', 'Худи и толстовки');
-INSERT INTO `catalogs` (`id`, `name`) VALUES ('7', 'Топы и футболки');
-INSERT INTO `catalogs` (`id`, `name`) VALUES ('8', 'Компрессионные модели');
-INSERT INTO `catalogs` (`id`, `name`) VALUES ('9', 'Бра спортивные');
-INSERT INTO `catalogs` (`id`, `name`) VALUES ('10', 'Футболки');
-INSERT INTO `catalogs` (`id`, `name`) VALUES ('11', 'Поло');
-INSERT INTO `catalogs` (`id`, `name`) VALUES ('12', 'Брюки и тайтсы');
-INSERT INTO `catalogs` (`id`, `name`) VALUES ('13', 'Форма и джерси');
-INSERT INTO `catalogs` (`id`, `name`) VALUES ('14', 'Кроссовки');
-INSERT INTO `catalogs` (`id`, `name`) VALUES ('15', 'Аксессуары');
+INSERT INTO `catalogs` (`id`, `name`) VALUES ('1', 'Ð¡Ð¿Ð¾Ñ€Ñ‚Ð¸Ð²Ð½Ñ‹Ðµ ÐºÐ¾ÑÑ‚ÑŽÐ¼Ñ‹');
+INSERT INTO `catalogs` (`id`, `name`) VALUES ('2', 'Ð®Ð±ÐºÐ¸ Ð¸ Ð¿Ð»Ð°Ñ‚ÑŒÑ');
+INSERT INTO `catalogs` (`id`, `name`) VALUES ('3', 'Ð¨Ð¾Ñ€Ñ‚Ñ‹');
+INSERT INTO `catalogs` (`id`, `name`) VALUES ('4', 'Ð‘Ñ€ÑŽÐºÐ¸ Ð¸ Ð»ÐµÐ³Ð³Ð¸Ð½ÑÑ‹');
+INSERT INTO `catalogs` (`id`, `name`) VALUES ('5', 'ÐšÑƒÑ€Ñ‚ÐºÐ¸ Ð¸ Ð¶Ð¸Ð»ÐµÑ‚Ñ‹');
+INSERT INTO `catalogs` (`id`, `name`) VALUES ('6', 'Ð¥ÑƒÐ´Ð¸ Ð¸ Ñ‚Ð¾Ð»ÑÑ‚Ð¾Ð²ÐºÐ¸');
+INSERT INTO `catalogs` (`id`, `name`) VALUES ('7', 'Ð¢Ð¾Ð¿Ñ‹ Ð¸ Ñ„ÑƒÑ‚Ð±Ð¾Ð»ÐºÐ¸');
+INSERT INTO `catalogs` (`id`, `name`) VALUES ('8', 'ÐšÐ¾Ð¼Ð¿Ñ€ÐµÑÑÐ¸Ð¾Ð½Ð½Ñ‹Ðµ Ð¼Ð¾Ð´ÐµÐ»Ð¸');
+INSERT INTO `catalogs` (`id`, `name`) VALUES ('9', 'Ð‘Ñ€Ð° ÑÐ¿Ð¾Ñ€Ñ‚Ð¸Ð²Ð½Ñ‹Ðµ');
+INSERT INTO `catalogs` (`id`, `name`) VALUES ('10', 'Ð¤ÑƒÑ‚Ð±Ð¾Ð»ÐºÐ¸');
+INSERT INTO `catalogs` (`id`, `name`) VALUES ('11', 'ÐŸÐ¾Ð»Ð¾');
+INSERT INTO `catalogs` (`id`, `name`) VALUES ('12', 'Ð‘Ñ€ÑŽÐºÐ¸ Ð¸ Ñ‚Ð°Ð¹Ñ‚ÑÑ‹');
+INSERT INTO `catalogs` (`id`, `name`) VALUES ('13', 'Ð¤Ð¾Ñ€Ð¼Ð° Ð¸ Ð´Ð¶ÐµÑ€ÑÐ¸');
+INSERT INTO `catalogs` (`id`, `name`) VALUES ('14', 'ÐšÑ€Ð¾ÑÑÐ¾Ð²ÐºÐ¸');
+INSERT INTO `catalogs` (`id`, `name`) VALUES ('15', 'ÐÐºÑÐµÑÑÑƒÐ°Ñ€Ñ‹');
 
 
 INSERT INTO `color` (`id`, `color`) VALUES ('1', 'fuchsia');
@@ -1247,8 +1247,8 @@ INSERT INTO `discounts` (`id`, `user_id`, `products_id`, `discount`, `started_at
 INSERT INTO `discounts` (`id`, `user_id`, `products_id`, `discount`, `started_at`, `finished_at`, `created_at`, `updated_at`) VALUES ('29', 27, '97', '5', '1997-04-29 17:23:50', '1990-01-20 01:57:02', '1988-04-07 03:05:43', '2008-08-24 09:13:04');
 INSERT INTO `discounts` (`id`, `user_id`, `products_id`, `discount`, `started_at`, `finished_at`, `created_at`, `updated_at`) VALUES ('30', 24, '14', '1', '1976-10-20 10:59:14', '1997-04-09 12:20:19', '1987-06-16 04:52:39', '2016-04-01 20:00:39');
 
--- ������� 6
--- ����������� ������ �� ���� �������� ������
+-- Çàäàíèå 6
+-- Ãðóïïèðîâêà äàííûõ ïî ãîäó ðîæäåíèÿ þçåðîâ
 
 select id, firstname, substring(birthday,1,3) as decade from users order by decade;
 
@@ -1257,27 +1257,27 @@ select
 	substring(birthday,1,3) as decade 
 		from users group by decade order by total desc;
 	
--- ����� ����������� ������� �����r ������������� �� ����� ��������
+-- ïîñëå ãðóïïèðîâêè ñìîòðèì ñïèñîr ïîëüçîâàòåëåé ïî ãîäàì ðîæäåíèÿ
 select 
 	group_concat(firstname order by firstname separator ', '),
 	substring(birthday,1,3) as decade
 	from users group by decade;
 
--- ����� ������������ ���� � ����������� ���� �� ������ ���������
+-- âûâîä ìàêñèìàëüíîé öåíû è ìèíèìàëüíîé öåíû ïî ãðóïïå òîâàðàðîâ
 select catalog_id, 
 	Min(price) as min, Max(price) as max
 	from products group by catalog_id; 
 
 
--- ����� ���� �������, ����������� � ������ "�����" (3) �� ������ ���������
+-- âûâîá âñåõ òîâàðîâ, îòíîñÿùèõñÿ ê ãðóïïå "øîðòû" (3) èç ñïèñêà ïðîäóêòîâ
 select id, price, gender, productSize_id 
 	from products 
-	where catalog_id = (select id from catalogs c where name = '�����');
+	where catalog_id = (select id from catalogs c where name = 'Øîðòû');
 
- -- ��������� ����� ������� ������ ����� �� ��������
+ -- äîáàâëÿåì áóêâó ðàçìåðà âìåñòî öèôðû èç êàòàëîãà
 select id, price, gender, (select productSize from productSize where id = productSize_id) as 'Size'
 	from products 
-	where catalog_id = (select id from catalogs c where name = '�����');
+	where catalog_id = (select id from catalogs c where name = 'Øîðòû');
 
 
 -- join
@@ -1289,4 +1289,18 @@ select
 		join sporttype as s on s.id=p.catalog_id;
 		
 	
--- ������� 7 �������������
+-- Çàäàíèå 7 Ïðåäñòàâëåíèÿ
+create view bday_months as 
+	select firstname, lastname, email, phone, gender, birthday, hometown
+	from users
+		join orders on users.id = orders.users_id 
+		where month(birthday) = month(now());
+select * from bday_months;	
+
+
+create view best_brendname as 
+	select sporttype_id, brendname_id, collection_id, productSize_id   
+	from products 
+		join orders_products on orders_products.products_id = products.id 
+		where productSize_id = 2;
+select * from best_brendname;	
