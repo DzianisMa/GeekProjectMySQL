@@ -1304,3 +1304,31 @@ create view best_brendname as
 		join orders_products on orders_products.products_id = products.id 
 		where productSize_id = 2;
 select * from best_brendname;	
+
+-- 8 процедуры и процедуры
+
+delimiter //
+create procedure users_name(IN users_id INT, out full_name Varchar(100))
+	begin
+		select concat(firstname, ' ', lastname) into full_name from users where id = users_id; 
+	end 
+//
+Delimiter ;
+
+set @id :=35; 
+call users_name(@id, @name);
+select @id, @name;
+
+
+delimiter //
+create trigger check_users_age before update on users
+for each row 
+	begin
+		if new.birthday >= current_date() then
+			signal sqlstate '45000' set message_text = 'Update canceled. Mistake';
+		end if;
+	end 
+//
+Delimiter ;
+	
+
